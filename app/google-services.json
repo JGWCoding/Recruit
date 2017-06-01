@@ -1,0 +1,130 @@
+{
+  "project_info": {
+    "project_number": "42947908165",
+    "firebase_url": "https://mydome-4944b.firebaseio.com",
+    "project_id": "mydome-4944b",
+    "storage_bucket": "mydome-4944b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:42947908165:android:1073bb11ebf746a9",
+        "android_client_info": {
+          "package_name": "com.myapp.dome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "42947908165-ojp5irin85hohcs2qodkvpn5dd034n8t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.myapp.dome",
+            "certificate_hash": "48db88b0672cf5f88a565e948e12ffcf35bbe95c"
+          }
+        },
+        {
+          "client_id": "42947908165-i67mreeda7bgu53ml5osmogohnrq0udt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXrzyhcB6KFtWyZbelPTGr_6zWpNGWBQI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "42947908165-i67mreeda7bgu53ml5osmogohnrq0udt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:42947908165:android:d8f5fc17a8201698",
+        "android_client_info": {
+          "package_name": "luren.com.ywysdome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "42947908165-4654pgsv47ibgfhgadotb3g7qmnhbelp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "luren.com.ywysdome",
+            "certificate_hash": "50c32568237c21153c0bc1bf2c633702ffdfff45"
+          }
+        },
+        {
+          "client_id": "42947908165-i67mreeda7bgu53ml5osmogohnrq0udt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXrzyhcB6KFtWyZbelPTGr_6zWpNGWBQI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "42947908165-i67mreeda7bgu53ml5osmogohnrq0udt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:42947908165:android:1593f7d7208dc1e3",
+        "android_client_info": {
+          "package_name": "com.topine.www.recruit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "42947908165-i67mreeda7bgu53ml5osmogohnrq0udt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXrzyhcB6KFtWyZbelPTGr_6zWpNGWBQI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

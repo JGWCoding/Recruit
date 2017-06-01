@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context="com.topine.www.recruit.MainActivity">
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mWebView"
+        android:layout_centerHorizontal="true"
+         >
+    </WebView>
+        <!--<ProgressBar-->
+            <!--style="?android:attr/progressBarStyleHorizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="5dp"-->
+            <!--android:progressDrawable="@drawable/progress"-->
+            <!--android:id="@+id/progressBar" />-->
+    <LinearLayout
+        android:gravity="center"
+        android:visibility="gone"
+        android:id="@+id/ll"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/online_error_btn_retry"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#E6E6E6"
+            android:clickable="true"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/img_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="3dip"
+                android:padding="10dip"
+                android:src="@drawable/network_disconnected" />
+
+            <TextView
+                android:id="@+id/img_error123"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_error"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="3dip"
+                android:gravity="center"
+                android:text="@string/net_error"
+                android:textColor="#737373" />
+        </RelativeLayout>
+    </LinearLayout>
+    <!--<Button-->
+        <!--android:text="获取token"-->
+        <!--android:onClick="click"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" />-->
+</RelativeLayout>

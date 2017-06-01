@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">即聘僱主版</string>
+    <string name="tip">提示</string>
+    <string name="has_new_version">发现新版本</string>
+    <string name="update">更新</string>
+    <string name="unUpdate">稍后更新</string>
+    <string name="net_error">沒有網絡,請檢查網絡後再試</string>
+</resources>

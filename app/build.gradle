@@ -1,0 +1,85 @@
+apply plugin: 'com.android.application'
+
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.topine.www.recruit"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        // dex突破65535的限制
+        multiDexEnabled true
+        // 默认是umeng的渠道
+        manifestPlaceholders = [UMENG_CHANNEL_VALUE: "umeng"]
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    lintOptions {
+        abortOnError false
+    }
+    //签名配置
+    signingConfigs {
+        release {
+            storeFile file("../RRFapp.jks")
+            storePassword "qqqqqq"
+            keyAlias "rrf"
+            keyPassword "qqqqqq"
+            v2SigningEnabled false
+        }
+    }
+
+
+
+    buildTypes {
+        debug {
+            minifyEnabled true
+            zipAlignEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        release {
+            minifyEnabled true   //是否混淆
+            zipAlignEnabled true //是否进行zip优化
+            shrinkResources true  //是否删除些无用的资源
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release  //签名配置
+        }
+    }
+
+    productFlavors {
+        xiaomi {}
+        wandoujia {}
+    }
+
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    testCompile 'junit:junit:4.12'
+
+
+    compile 'com.jakewharton:butterknife:7.0.1'//butterknife添加
+    compile 'com.dou361.dialogui:jjdxm-dialogui:1.0.1'//dialog弹出框
+    //集成FCM推送
+    compile 'com.google.firebase:firebase-core:9.6.1'
+    compile 'com.google.firebase:firebase-messaging:9.6.1'
+    //集成FCM推送
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.github.LuckSiege.PictureSelector:picture_library:v1.2.7' //图片选择
+//    compile 'com.squareup.okhttp3:okhttp:3.7.0'  //网络连接
+//    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3' //检测内存泄漏
+//    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3'
+}
+
+apply plugin: 'com.google.gms.google-services'
