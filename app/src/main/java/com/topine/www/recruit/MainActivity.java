@@ -192,9 +192,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                progressDialog = ProgressDialog.show(MainActivity.this, null, "正在加载中", false,
 //                        false, null); //
 //                if(dialogMd!=null&&!dialogMd.isShowing())
-                if(dialogMd==null)
-                dialogMd = DialogUIUtils.showMdLoadingVertical(MainActivity.this, "加載中...").show();
-                else dialogMd.show();
+                //加载开始 -- 隐藏webView(不显示加载过程) > 如果上次是加载错误了就显示错误页面---> 显示加载中页面 --> 改变标识 -- 没有加载错误
+                if(dialogMd==null) {
+                    dialogMd = DialogUIUtils.showMdLoadingVertical(MainActivity.this, "加載中...").show();
+                } else {
+                    dialogMd.show();
+                }
                 mWebView.setVisibility(View.GONE);
                 if (isLoadError) {
                     linearLayout.setVisibility(View.VISIBLE);
@@ -206,20 +209,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onPageFinished(WebView view, String url) { //webView加载页面完毕
                 super.onPageFinished(view,url);
 //                progressDialog.dismiss();
-                if (dialogMd!=null&&dialogMd.isShowing())
-                    dialogMd.dismiss();
-                if (!mWebView.isShown()){  //如果页面加载完毕,webView没显示给予显示
-                    mWebView.setVisibility(View.VISIBLE);
-                }
+                //加载完成 --> 进行判断是否加载错误 ---> 加载错误显示加载错误页面(判断没网提示没网) ---> 加载成功显示webView,隐藏错误页面(如果没网提示在就关闭)->关闭加载中页面
+
+//                if (!mWebView.isShown()){  //如果页面加载完毕,webView没显示给予显示
+//                    mWebView.setVisibility(View.VISIBLE);
+//                }
                 if (isLoadError) {
                     linearLayout.setVisibility(View.VISIBLE);
                     if(!NetWorkStateUtils.isNetworkConnected(MainActivity.this)) {
                         showDialog();
                     }
                 }else {
-                    if (dialog!=null)
-                    dialog.dismiss();
+                    mWebView.setVisibility(View.VISIBLE);
                     linearLayout.setVisibility(View.GONE);
+                    if (dialog!=null&&dialog.isShowing())
+                    dialog.dismiss();
+                }
+                if (dialogMd!=null&&dialogMd.isShowing()) {
+                    dialogMd.dismiss();
                 }
 
             }
